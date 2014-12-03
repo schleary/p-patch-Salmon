@@ -17,4 +17,16 @@ RSpec.describe PostsController, :type => :controller do
      end
    end
 
+   describe "GET 'show'" do
+     it 'is successful' do
+       post = Post.create(title: "blah", content: "blahblah", user_id: 1)
+       get :show, id: post.id
+       expect(response.status).to eq(200)
+     end
+   end
+
+   describe "DELETE 'destroy'" do
+     pending
+   end
+
 end
