@@ -1,0 +1,14 @@
+<form role="form">
+  <%= form_for @post, url: {action: "create"} do |post| %>
+    <div class="form-group">
+      <label for="Title" >Title</label>
+      <%= post.text_field :title, class: "form-control", placeholder: "Title"%>
+    </div>
+    <div class="form-group">
+      <label for="Content">Content</label>
+      <%= post.text_area :content, class: "form-control", placeholder: "", rows: "15"%>
+      </div>
+    
+    <button type="submit" class="btn btn-default">Submit</button>
+  <% end %>
+</form>

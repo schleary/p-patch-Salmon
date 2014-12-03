@@ -2,12 +2,21 @@
 class PostsController < ApplicationController
 
   def index
-    redirect_to "/posts/index"
+    @posts = Post.all
+  end
+
+  def new
+    @post = Post.new
   end
 
   def create
+    puts "ARE WE HERE?"
     @post = Post.new(post_params)
-    redirect_to posts_path
+    if @post.save
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   def update
@@ -23,6 +32,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :user_id)
+    params.require(:post).permit(:title, :content)
   end
 end
