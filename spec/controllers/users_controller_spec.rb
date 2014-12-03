@@ -16,6 +16,8 @@ RSpec.describe UsersController, :type => :controller do
     end
   end
 
-
+  describe "create new user" do
+    pending
+  end
 
 end
