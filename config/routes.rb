@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :tools, :posts
 
   get "/users/:id/account", to: "users#account", as: :account
+  get "/home/index",        to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
