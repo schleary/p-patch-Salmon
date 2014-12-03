@@ -1,36 +1,27 @@
-<div class="modal fade" id="toolModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Add a tool</h4>
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        MODALLLLLLLLLLLLLLLLL
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
 
-<button type="button" class="btn btn-default add-tool" data-toggle="modal" data-target="toolModal">Add a tool</button>
+<div class="fullpage-div">
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
 
-
-<% @tools.each do |tool| %>
-  <div id="tool-<%= tool.id %>">
-    <%= image_tag tool.img %>
-    <%= tool.name %>
-    <% if tool.availability == false && tool.person_id == sessions[:current_user] %>
-      <button type="button" class="btn btn-default return-tool">
-        Return
-      </button>
-    <% elsif tool.availability == true %>
-      <button type="button" class="btn btn-default checkout-tool">
-        Check Out
-      </button>
-    <% else %>
-      <button type="button" class="btn btn-default checkedout-tool">
-        Unavailable
-      </button>
-    <% end %>
-  </div>
-<% end %>
+</div>
