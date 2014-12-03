@@ -1,1 +1,3 @@
-blah
+<% @tools.each do |tool| %>
+  <div id="tool-<%= tool.id %>"><%= image_tag tool.img %> <%= tool.name %></div>
+<% end %>
