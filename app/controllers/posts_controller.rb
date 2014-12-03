@@ -1,6 +1,10 @@
 # This controlls the posts
 class PostsController < ApplicationController
 
+  def index
+    redirect_to "/posts/index"
+  end
+
   def create
     @post = Post.new(post_params)
     redirect_to posts_path
