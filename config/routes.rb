@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get     "/users/:id/account",         to: "users#account",               as: :account
 
 
-  get "/auth/twitter", to: "sessions#new", as: :twitter_callback
-  get "/auth/twitter/callback", to: "sessions#create", as: :twitter
+  get "/auth/twitter/callback", to: "sessions#new", as: :twitter_callback
+
 
 
 
