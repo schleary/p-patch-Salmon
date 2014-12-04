@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get    "home/index",      to: "home#index",                  as: :home_index
   root   "home#index",                                  as: :root
   get "/users/:id/account", to: "users#account", as: :account
-  get "/auth/twitter", to: "sessions#new"
+  get "/auth/twitter", to: "sessions#new", as: :twitter_callback
   get "/auth/twitter/callback", to: "sessions#create", as: :twitter
 
 
