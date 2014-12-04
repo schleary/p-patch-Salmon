@@ -1,4 +1,4 @@
 class Post < ActiveRecord::Base
 
-  validates :content, :title, :user_id, presence: true
+  validates :content, :title, presence: true
 end
