@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get    "home/index",      to: "home#index",                  as: :home_index
   root   "home#index",                                  as: :root
   get "/users/:id/account", to: "users#account", as: :account
-  get "/auth/twitter/callback", to: "users#create"
+  get "/auth/twitter/callback", to: "users#create", as: :twitter
 
 
   # The priority is based upon order of creation: first created -> highest priority.
