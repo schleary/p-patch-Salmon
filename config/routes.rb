@@ -1,12 +1,31 @@
 Rails.application.routes.draw do
 
   resources :tools, :posts
-
+  get    "home/index",                                  as: :home_index
+  root   "home#index",                                  as: :root
   get "/users/:id/account", to: "users#account", as: :account
   get "/home/index",        to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+# tools_path	GET	/tools(.:format)	tools#index
+# POST	/tools(.:format)	tools#create
+# new_tool_path	GET	/tools/new(.:format)	tools#new
+# edit_tool_path	GET	/tools/:id/edit(.:format)	tools#edit
+# tool_path	GET	/tools/:id(.:format)	tools#show
+# PATCH	/tools/:id(.:format)	tools#update
+# PUT	/tools/:id(.:format)	tools#update
+# DELETE	/tools/:id(.:format)	tools#destroy
+# posts_path	GET	/posts(.:format)	posts#index
+# POST	/posts(.:format)	posts#create
+# new_post_path	GET	/posts/new(.:format)	posts#new
+# edit_post_path	GET	/posts/:id/edit(.:format)	posts#edit
+# post_path	GET	/posts/:id(.:format)	posts#show
+# PATCH	/posts/:id(.:format)	posts#update
+# PUT	/posts/:id(.:format)	posts#update
+# DELETE	/posts/:id(.:format)	posts#destroy
+# account_path	GET	/users/:id/account(.:format)	users#account
+# home_index_path	GET	/home/index(.:format)	home#index
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

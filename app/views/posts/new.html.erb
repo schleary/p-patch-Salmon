@@ -1,15 +1,6 @@
-<%= form_for @post, url: {action: "create"} do |post| %>
-  <div class="form-group">
-    <label>Title</label>
-    <%= post.text_field :title, class: "form-control", placeholder: "Title" %>
-  </div>
-  <div class="form-group">
-    <label>Content</label>
-    <%= post.text_area :content, class: "form-control", placeholder: "Content", rows: "20" %>
-  </div>
-  <div class="form-group">
-    <label>Image URL</label>
-    <%= post.text_field :img, class: "form-control", placeholder: "Image Link" %>
-  </div>
-  <%= post.submit "Save", class: "btn btn-default" %>
+<%= bootstrap_form_for(@post) do |f| %>
+  <%= f.text_field :title, class: "form-control", placeholder: "Title"  %>
+  <%= f.text_area :content, class: "form-control", placeholder: "Content", rows: "20" %>
+  <%= f.text_field :img, class: "form-control", placeholder: "Image Link" %>
+  <%= f.submit "Save", class: "btn btn-default"%>
 <% end %>
