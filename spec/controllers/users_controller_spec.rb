@@ -28,4 +28,10 @@ RSpec.describe UsersController, :type => :controller do
     end
   end
 
+  describe "POST 'update'" do
+    it 'should change the admin status of a user' do
+      pending
+    end
+  end
+
 end
