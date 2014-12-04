@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :tools, :posts
+  resources :tools, :posts, :sessions, :users
   get    "home/index",                                  as: :home_index
   root   "home#index",                                  as: :root
   get "/users/:id/account", to: "users#account", as: :account

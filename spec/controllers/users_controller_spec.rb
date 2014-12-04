@@ -16,8 +16,16 @@ RSpec.describe UsersController, :type => :controller do
     end
   end
 
-  describe "create new user" do
-    pending
+  describe "POST 'create'" do
+    it 'is successful' do
+      expect{ post :create, user: {email: 'a@b.com', name: 'Holly', password: '12345' } }.to change(User, :count).by(1)
+    end
+
+    it 'should redirect to the accounts page' do
+      post :create, user: {email: 'a@b.com', name: 'Holly', password: '12345'}
+      puts assigns.inspect
+      expect(response).to redirect_to account_path(assigns[:user])
+    end
   end
 
 end
