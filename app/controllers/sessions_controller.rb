@@ -22,15 +22,13 @@ class SessionsController < ApplicationController
       #search settings hash items info user
       # email = client.user_info(auth_hash.uid)
 
-      @user = User.create(uid: auth_hash.uid, name: auth_hash.info.name)
-      puts "*************"
-      puts @user.inspect
-      puts "*************"
-      session[:user_id] = @user.id
-
-        puts current_user.inspect
-      # email: auth_hash['email']
-      redirect_to root_path
+      @user = User.new(uid: auth_hash.uid, name: auth_hash.info.name)
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to account_path(@user.id)
+      else
+        redirect_to root_path
+      end
     end
   end
 
