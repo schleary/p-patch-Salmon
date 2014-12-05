@@ -8,7 +8,7 @@ class ToolsController < ApplicationController
   def update
     @tool = Tool.find(params[:id])
     if @tool.availability
-      @tool.checkout(tool_params[:person_id])
+      @tool.checkout(tool_params[:user_id])
     else
       @tool.put_back
     end
@@ -19,7 +19,7 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :img, :availabilty, :person_id)
+    params.require(:tool).permit(:id, :name, :img, :availabilty, :user_id)
   end
 
 end

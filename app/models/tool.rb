@@ -1,14 +1,15 @@
 class Tool < ActiveRecord::Base
+  belongs_to :user
   validates :name, :img, presence: true
 
   def checkout(person_id)
-    self.person_id = person_id
+    self.user_id = person_id
     self.availability = false
     self
   end
 
   def put_back
-    self.person_id = nil
+    self.user_id = nil
     self.availability = true
     self.save
   end
