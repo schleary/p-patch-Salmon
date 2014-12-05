@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
 
-  validates :email, :name, :uid, presence: true, uniqueness: true
+  validates :name, :uid, presence: true, uniqueness: true
+  #:email,
   # validates :admin, class: Boolean
 
-  validates :email, format: { with: /@/ }
+  # validates :email, format: { with: /@/ }
 
   def adminify
     self.admin = true
