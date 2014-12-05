@@ -13,4 +13,7 @@ class Tool < ActiveRecord::Base
     self.save
   end
 
+  def self.sort_tools
+  end
+
 end
