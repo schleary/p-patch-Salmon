@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   def show
     @user = @current_user
     @user.admin == "true" ? @admin = true : @admin = false
+    @users = User.where(admin: "pending")
   end
 
   def update
