@@ -4,16 +4,23 @@ class ToolsController < ApplicationController
     @tool = Tool.new
     @tools = []
     used = []
+    unavailable = []
+    avail = []
     touhlz = Tool.all
     touhlz.each do |f|
-      if f.availability == true
+      if f.availability == false && f.person_id == @current_user.id
         @tools << f
-      else
+      elsif f.availability == true
         used << f
+      elsif f.availability == false && f.person_id != @current_user.id
+        avail << f
+      else
+        unavailable << f
       end
     end
     (@tools << used).flatten!
-    # @tools = Tool.all.sort_tools
+    (@tools << avail).flatten!
+    (@tools << unavailable).flatten!
   end
 
   def new
@@ -43,7 +50,7 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :img, :person_id, :availability)
+    params.require(:tool).permit(:id, :name, :img, :person_id, :availability)
   end
 
 end
