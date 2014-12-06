@@ -25,7 +25,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    
+    @user = @current_user
+    @user.update(params.require(:user).permit(:name, :email))
+    flash[:notice] = "Your account has been updated!"
+    redirect_to @user
   end
 
   def destroy
