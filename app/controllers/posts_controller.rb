@@ -12,7 +12,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      @users = User.where(email: true)
+      @users = User.all
+      @users = @users.map {|user| user if user.email? }
       @users.each do |user|
         NewsMailer.news(@post.id, user.id).deliver
       end
