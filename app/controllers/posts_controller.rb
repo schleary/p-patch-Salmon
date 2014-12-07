@@ -10,9 +10,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    puts "ARE WE HERE?"
     @post = Post.new(post_params)
     if @post.save
+      NewsMailer.news(@post.id).deliver
       redirect_to posts_path
     else
       render :new

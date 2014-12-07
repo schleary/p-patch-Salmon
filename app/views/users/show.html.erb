@@ -20,3 +20,8 @@
 
 
 <%= link_to "Delete Your Account", @user, method: :delete, class: "btn btn-default" %>
+
+<% if @user.admin %>
+  <hr>
+  You are an admin!
+<% end %>
