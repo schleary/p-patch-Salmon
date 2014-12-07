@@ -6,7 +6,7 @@ class NewsMailer < ActionMailer::Base
     mail(
       to: "schleary@gmail.com",
       subject: @post.title,
-      from: "kokopellilime@gmail.com"
+      from: "schleary@gmail.com"
     )
   end
 end

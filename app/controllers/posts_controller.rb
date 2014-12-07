@@ -10,7 +10,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    puts "ARE WE HERE?"
     @post = Post.new(post_params)
     if @post.save
       NewsMailer.news(@post.id).deliver
