@@ -12,7 +12,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      NewsMailer.news(@post.id).deliver
+      @users = User.where(email: true)
+      @users.each do |user|
+        NewsMailer.news(@post.id, user.id).deliver
+      end
       redirect_to posts_path
     else
       render :new
