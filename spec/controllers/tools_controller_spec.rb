@@ -18,14 +18,14 @@ RSpec.describe ToolsController, :type => :controller do
 
     it 'checks out available tools, making them unavailable' do
       tool = Tool.create(img: "blah", name: "me")
-      patch :update, id: tool.id, tool: { availability: false, person_id: 1 }
+      patch :update, id: tool.id, tool: { availability: false, user_id: 1 }
       expect(Tool.find(tool.id).availability).to eq(false)
       # This is insane.
     end
 
     it 'returns checked out tools, and makes them available' do
-      tool = Tool.create(img: "blah", name: "me", availability: false, person_id: 1)
-      patch :update, id: tool.id, tool: {availability: true, person_id: nil}
+      tool = Tool.create(img: "blah", name: "me", availability: false, user_id: 1)
+      patch :update, id: tool.id, tool: {availability: true, user_id: nil}
       expect(Tool.find(tool.id).availability).to eq(true)
     end
   end

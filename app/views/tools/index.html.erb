@@ -15,8 +15,8 @@
       <div class="modal-body">
         <%= bootstrap_form_for @tool, url: { action: "create" } do |f| %>
           <%= f.text_field :name, label: "Tool Name" %>
-          <!-- current_user.user.person_id -->
-          <%= f.hidden_field :person_id, :value => @current_user.id %>
+          <!-- current_user.user.user_id -->
+          <%= f.hidden_field :user_id, :value => @current_user.id %>
           <%= f.hidden_field :availability %>
           <%= f.text_field :img, label: "Image URL"%>
           <%= f.submit "Add Tool" %>
@@ -46,14 +46,14 @@
     </div>
     <div class="media-button">
       <%= bootstrap_form_for tool, url: tool_path(tool.id) do |f| %>
-        <%= f.hidden_field :person_id, :value => @current_user.id %>
+        <%= f.hidden_field :user_id, :value => @current_user.id %>
 
-        <% if (tool.availability == false) && (tool.person_id == @current_user.id) %>
+        <% if (tool.availability == false) && (tool.user_id == @current_user.id) %>
           <%= f.submit "Return Tool", class: "btn btn-danger" %>
         <% elsif tool.availability == true %>
           <%= f.submit "Check Out Tool", class: "btn btn-success" %>
-        <% elsif tool.availability == false && tool.person_id != @current_user.id%>
-          <%= f.submit "Checked Out", class: "btn btn-default" %>
+        <% elsif tool.availability == false && tool.user_id != @current_user.id%>
+          <%= f.submit "Checked Out", class: "btn btn-default", disabled: "disabled"%>
         <% end %>
       <% end %>
     </div>

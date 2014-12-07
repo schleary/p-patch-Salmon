@@ -30,9 +30,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <% if @current_user %>
-              <li class="active"><%= link_to "Sign Out (Don't click me)", session_path(session[:user_id]), method: :delete  %> <span class="sr-only">(current)</span></li>
+              <li class="active"><%= link_to "Sign Out", session_path(session[:user_id]), method: :delete  %> <span class="sr-only">(current)</span></li>
             <% else %>
-              <li class="active"><%= link_to 'Sign In', 'auth/twitter' %> <span class="sr-only">(current)</span></li>
+              <li class="active"><%= link_to 'Sign In With Twitter', 'auth/twitter' %> <span class="sr-only">(current)</span></li>
             <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">

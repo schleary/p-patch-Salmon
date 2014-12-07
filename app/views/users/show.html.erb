@@ -1,0 +1,22 @@
+<h2>Hello, <%= @user.name %></h2>
+
+<% if flash[:notice] %>
+  <div class="center"> <%= flash[:notice] %> </div>
+<% end %>
+
+<%= bootstrap_form_for(@user) do |f| %>
+  <div id="edit-name">
+    <%= f.text_field :name %>
+  </div>
+  <div id="edit-email">
+    <% if @user.email %>
+      <%= f.email_field :email %>
+    <% else %>
+      <%= f.email_field :email, placeholder: "Add your email to get updates about garden events and news!" %>
+    <% end %>
+  </div>
+    <%= f.submit class: "btn btn-default", value: "Update Account"%>
+<% end %>
+
+
+<%= link_to "Delete Your Account", @user, method: :delete, class: "btn btn-default" %>

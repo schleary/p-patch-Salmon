@@ -8,11 +8,11 @@ class ToolsController < ApplicationController
     avail = []
     touhlz = Tool.all
     touhlz.each do |f|
-      if f.availability == false && f.person_id == @current_user.id
+      if f.availability == false && f.user_id == @current_user.id
         @tools << f
       elsif f.availability == true
         used << f
-      elsif f.availability == false && f.person_id != @current_user.id
+      elsif f.availability == false && f.user_id != @current_user.id
         avail << f
       else
         unavailable << f
@@ -39,7 +39,7 @@ class ToolsController < ApplicationController
   def update
     @tool = Tool.find(params[:id])
     if @tool.availability
-      @tool.checkout(tool_params[:person_id])
+      @tool.checkout(tool_params[:user_id])
     else
       @tool.put_back
     end
@@ -50,7 +50,7 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:id, :name, :img, :person_id, :availability)
+    params.require(:tool).permit(:id, :name, :img, :availabilty, :user_id)
   end
 
 end

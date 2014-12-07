@@ -4,7 +4,7 @@ class CreateTools < ActiveRecord::Migration
       t.string :name
       t.string :img
       t.boolean :availability
-      t.integer :person_id
+      t.integer :user_id
 
       t.timestamps
     end

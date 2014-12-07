@@ -21,9 +21,9 @@ RSpec.describe Tool, :type => :model do
       expect(tool.availability).to eq(false)
     end
 
-    it 'changes person_id to the id of the check-outer' do
+    it 'changes user_id to the id of the check-outer' do
       tool.checkout(1)
-      expect(tool.person_id).to be(1)
+      expect(tool.user_id).to be(1)
     end
 
   end
@@ -35,10 +35,10 @@ RSpec.describe Tool, :type => :model do
       expect(tool.availability).to eq(true)
     end
 
-    it 'changes person_id to nil' do
+    it 'changes user_id to nil' do
       tool.checkout(1)
       tool.put_back
-      expect(tool.person_id).to eq(nil)
+      expect(tool.user_id).to eq(nil)
     end
   end
 end
