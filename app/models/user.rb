@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :tools
+  has_many :posts
 
   validates :name, :uid, presence: true, uniqueness: true
   #:email,

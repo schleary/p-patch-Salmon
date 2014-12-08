@@ -1,5 +1,9 @@
+require 'resque/server'
+
 Rails.application.routes.draw do
 
+  mount Resque::Server, :at => "/resque"
+  
   resources :tools, :posts, :sessions, :users
 
   get     "/home/index",            to: "home#index",    as: :home_index

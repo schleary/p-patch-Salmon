@@ -10,4 +10,7 @@ class NewsMailer < ActionMailer::Base
       from: "schleary@gmail.com"
     )
   end
+
+  
+
 end

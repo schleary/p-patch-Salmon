@@ -1,1 +1,4 @@
-<h1>BLAH.</h1>
+<%= @post.content[0..500] %>
+...
+<br>
+<%= link_to "See More", "http://localhost:3000/posts/#{@post.id}" %>
