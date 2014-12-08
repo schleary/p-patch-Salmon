@@ -31,6 +31,7 @@ class UsersController < ApplicationController
     @user.update(params.require(:user).permit(:name, :email))
     email2 = @user.email
     unless @user.confirmed || email1 == email2
+
       Resque.enqueue(EmailSubscribeJob, @user.id)
       flash[:notice] = "Expect an email confirming your subscription shortly!"
     end
