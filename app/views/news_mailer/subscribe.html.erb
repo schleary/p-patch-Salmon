@@ -1,0 +1,15 @@
+Hello, <%= @user.name %>!
+<p>
+  According to our records, YOU, <%= @user.name %>, gave us an email address
+  so that we can send you emails about events and news at Garden Row.
+  If this is true, and you want to get these emails please click
+  <%= link_to "HERE", LINK_TO_SUBSCRIBE %> to confirm your email address and
+  start the spam party.
+
+  If you are not <%= @user.name %>, or you didn't mean to sign up for this stuff,
+  please disregard this email. We promise not to send you any more. Probably.
+</p>
+
+<p>
+  Okay, thanks, bye!
+</p>

@@ -3,7 +3,7 @@ require 'resque/server'
 Rails.application.routes.draw do
 
   mount Resque::Server, :at => "/resque"
-  
+
   resources :tools, :posts, :sessions, :users
 
   get     "/home/index",            to: "home#index",    as: :home_index
@@ -11,8 +11,6 @@ Rails.application.routes.draw do
 
   get     '/auth/twitter/callback', to: 'users#create',  as: :twitter_callback
   post    '/auth/twitter/callback', to: 'users#create'
-
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

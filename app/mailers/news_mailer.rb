@@ -11,6 +11,13 @@ class NewsMailer < ActionMailer::Base
     )
   end
 
-  
+  def subscribe(user_id)
+    @user = User.find(user_id)
+    mail(
+      to: @user.email,
+      subject: "Subscribe! For garden funsies!",
+      from: "schleary@gmail.com"
+    )
+  end
 
 end
