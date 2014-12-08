@@ -11,6 +11,5 @@ class User < ActiveRecord::Base
   def adminify
     self.admin = true
   end
-
-
+  
 end

@@ -39,11 +39,13 @@ class ToolsController < ApplicationController
   def update
     @tool = Tool.find(params[:id])
     if @tool.availability
-      @tool.checkout(tool_params[:user_id])
+      @tool.checkout(@current_user.id)
     else
       @tool.put_back
     end
     @tool.save
+    # json or html; can put hash here if you need it.
+    # render json: []
     redirect_to tools_path
   end
 

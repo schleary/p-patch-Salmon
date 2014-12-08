@@ -59,3 +59,28 @@
     <br>
   <% end %>
 </div>
+
+<!-- <div class="media">
+  <% @tools.each do |tool| %>
+    <div class ="media-image">
+      <img src="<%= tool.img %>" height="125px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= tool.name %></h4>
+    </div>
+    <div class="media-button">
+      <%= bootstrap_form_for tool, url: tool_path(tool.id) do |f| %>
+        <%= f.hidden_field :user_id, :value => @current_user.id %>
+
+        <% if (tool.availability == false) && (tool.user_id == @current_user.id) %>
+          <%= f.submit "Return Tool", class: "choose btn btn-danger" %>
+        <% elsif tool.availability == true %>
+          <%= f.submit "Check Out Tool", class: "choose btn btn-success" %>
+        <% elsif tool.availability == false && tool.user_id != @current_user.id%>
+          <%= f.submit "Checked Out", class: "btn btn-default", disabled: "disabled"%>
+        <% end %>
+      <% end %>
+    </div>
+    <br>
+  <% end %>
+</div> -->
