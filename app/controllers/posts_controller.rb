@@ -1,4 +1,4 @@
-# This controlls the posts
+# This controls the posts
 class PostsController < ApplicationController
 
   def index

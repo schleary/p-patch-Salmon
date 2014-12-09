@@ -9,14 +9,14 @@ RSpec.describe UsersController, :type => :controller do
     end
   end
 
-  describe "POST 'account'" do
+  describe "post 'account'" do
     it "is successful" do
       post :account, id: 1
       expect(response.status).to eq(200)
     end
   end
 
-  describe "POST 'create'" do
+  describe "post 'create'" do
     it 'is successful' do
       expect{ post :create, user: {email: 'a@b.com', name: 'Holly', password: '12345' } }.to change(User, :count).by(1)
     end
@@ -28,7 +28,7 @@ RSpec.describe UsersController, :type => :controller do
     end
   end
 
-  describe "POST 'update'" do
+  describe "post 'update'" do
     it 'should change the admin status of a user' do
       pending
     end

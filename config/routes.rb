@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   mount Resque::Server, :at => "/resque"
 
-  resources :tools, :posts, :sessions, :users
+  resources :tools, :posts, :sessions, :users, :calendars
 
   get   "/home/index",            to: "home#index",    as: :home_index
   root                                "home#index",    as: :root
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
 # tools_path	GET	/tools(.:format)	tools#index
-# POST	/tools(.:format)	tools#create
+# post	/tools(.:format)	tools#create
 # new_tool_path	GET	/tools/new(.:format)	tools#new
 # edit_tool_path	GET	/tools/:id/edit(.:format)	tools#edit
 # tool_path	GET	/tools/:id(.:format)	tools#show
@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 # PUT	/tools/:id(.:format)	tools#update
 # DELETE	/tools/:id(.:format)	tools#destroy
 # posts_path	GET	/posts(.:format)	posts#index
-# POST	/posts(.:format)	posts#create
+# post	/posts(.:format)	posts#create
 # new_post_path	GET	/posts/new(.:format)	posts#new
 # edit_post_path	GET	/posts/:id/edit(.:format)	posts#edit
 # post_path	GET	/posts/:id(.:format)	posts#show

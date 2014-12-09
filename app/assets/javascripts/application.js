@@ -13,3 +13,25 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+// $(function () {
+//   $(".choose").click(function (e) {
+//     e.preventDefault();
+//     var div = $(this);
+//     var url = $(this).parents("form").attr("action");
+//     console.log(url);
+//     $.ajax(url, {
+//       type: "PUT",
+//       url: url,
+//       success: function (data) {
+//         if(this.class == "btn-success")
+//           div.addClass("btn-danger");
+//         else if (this.class == "btn-danger")
+//           div.addClass("btn-success");
+//         }
+//       });
+//       // failure: function (data) {
+//       //   "this is broken!!!"
+//       // }
+//     });
+//   });

@@ -16,5 +16,4 @@ class User < ActiveRecord::Base
     self.confirmed = true
   end
 
-
 end

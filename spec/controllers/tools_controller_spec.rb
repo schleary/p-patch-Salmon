@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ToolsController, :type => :controller do
 
-  describe "POST 'create'" do
+  describe "post 'create'" do
     it 'is redirects to tools index' do
       post :create, tool: {img: "blah.com", name: "hoe"}
       expect(response).to redirect_to tools_path
