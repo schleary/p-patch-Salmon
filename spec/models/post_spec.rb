@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Post, :type => :model do
 
   let(:post) {
-    Post.new(
+    post.new(
     content: 'Blah',
     title: 'Blah Squared',
     user_id: 1,
