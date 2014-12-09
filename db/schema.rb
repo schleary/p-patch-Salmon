@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209184919) do
+ActiveRecord::Schema.define(version: 20141209234035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "forecasts", force: true do |t|
+    t.float    "temp"
+    t.float    "temp_min"
+    t.float    "temp_max"
+    t.float    "humidity"
+    t.string   "current_conditions"
+    t.string   "description"
+    t.string   "icon"
+    t.float    "speed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "day"
+  end
 
   create_table "posts", force: true do |t|
     t.text     "content"

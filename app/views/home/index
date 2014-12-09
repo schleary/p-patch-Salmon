@@ -3,3 +3,14 @@
   <p>A fun place to work and play</p>
   <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 </div>
+
+
+temp:  <%=@forecast.temp %><br>
+temp_min:  <%=@forecast.temp_min %> <br>
+temp_max:    <%=@forecast.temp_max %>  <br>
+humidity:       <%=@forecast.humidity %>   <br>
+current_conditions:<%=@forecast.current_conditions %><br>
+description:      <%= @forecast.description%> <br>
+icon:           <a class="navbar-brand" href="#"><img src="http://openweathermap.org/img/w/<%= @weather.weather_icon %>.png" alt="Weather Icon" ></a>   <br>
+speed:      <%=@forecast.speed %>    <br>
+day:     <%=@forecast.day %>    <br>

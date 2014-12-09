@@ -1,7 +1,5 @@
 class Weather < ActiveRecord::Base
 
-
-
   def self.query
     response = HTTParty.get('http://api.openweathermap.org/data/2.5/weather?q=Seattle,%20wa').parsed_response
 
