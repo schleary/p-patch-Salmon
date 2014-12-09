@@ -52,6 +52,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def confirm
+    @user = @current_user
+    @user.confirm
+    @user.save
+    redirect_to @user
+  end
+
   private
 
 

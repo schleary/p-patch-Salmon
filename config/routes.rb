@@ -6,11 +6,13 @@ Rails.application.routes.draw do
 
   resources :tools, :posts, :sessions, :users
 
-  get     "/home/index",            to: "home#index",    as: :home_index
-  root                                  "home#index",    as: :root
+  get   "/home/index",            to: "home#index",    as: :home_index
+  root                                "home#index",    as: :root
 
-  get     '/auth/twitter/callback', to: 'users#create',  as: :twitter_callback
-  post    '/auth/twitter/callback', to: 'users#create'
+  get   '/auth/twitter/callback', to: 'users#create',  as: :twitter_callback
+  post  '/auth/twitter/callback', to: 'users#create'
+
+  get   '/users/:id/confirm',      to: 'users#confirm', as: :confirm_user
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
