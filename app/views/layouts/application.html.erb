@@ -23,7 +23,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">❄</a>
+          <div>
+            <%= @weather.temp%>º
+            <a class="navbar-brand" href="#"><img src="http://openweathermap.org/img/w/<%= @weather.weather_icon %>.png" alt="Smiley face" ></a>
+          </div>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
