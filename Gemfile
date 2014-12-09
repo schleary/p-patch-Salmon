@@ -29,6 +29,7 @@ gem 'twitter'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'httparty'
 
 group :development do
   gem 'better_errors'
