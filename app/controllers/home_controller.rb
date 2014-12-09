@@ -3,8 +3,12 @@ require 'httparty'
 class HomeController < ApplicationController
 
   def index
-    @w = Weather.new()
-    raise "weather?"
+    response = Weather.query
+    @weather = Weather.new(response)
+    if @weather.save
+      puts @weather.inspect
+    else
+      raise "NOOOOO"
+    end
   end
-
 end

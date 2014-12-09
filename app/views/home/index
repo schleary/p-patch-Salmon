@@ -3,3 +3,11 @@
   <p>A fun place to work and play</p>
   <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 </div>
+
+
+  Temperature: <%= @weather.temp%><br>
+  Humidity: <%= @weather.humidity %><br>
+  Current Conditions: <%= @weather.current_conditions %><br>
+  Description: <%= @weather.description %><br>
+  Icon: <%= @weather.weather_icon %><br>
+  Windspeed: <%= @weather.windspeed %> <br>
