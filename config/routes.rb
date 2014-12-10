@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   mount Resque::Server, :at => "/resque"
 
-  resources :tools, :posts, :sessions, :users
+  resources :tools, :posts, :sessions, :users, :events
 
   resource :calendar, only: [:show], controller: :calendar
 

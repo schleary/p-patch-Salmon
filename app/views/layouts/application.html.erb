@@ -24,8 +24,11 @@
             <span class="icon-bar"></span>
           </button>
           <div>
-            <%= @weather.temp%>º
+
+
             <a class="navbar-brand" href="#"><img src="http://openweathermap.org/img/w/<%= @weather.weather_icon %>.png" alt="Weather Icon" ></a>
+            
+            <h4><%= @weather.temp%>º</h4>
           </div>
         </div>
 
