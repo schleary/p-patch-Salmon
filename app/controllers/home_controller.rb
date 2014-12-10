@@ -4,11 +4,14 @@ class HomeController < ApplicationController
 
   def index
     response = Forecast.query
-    @forecast = Forecast.new(response)
-    if @forecast.save
-      puts @forecast.inspect
-    else
-      raise "NOOOOO"
+
+    @forecast = response.map do |f|
+      forecast = Forecast.new(f)
+      if forecast.save
+       forecast
+      else
+        raise "NOOOOO"
+      end
     end
   end
 

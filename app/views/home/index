@@ -5,11 +5,15 @@
 </div>
 
 
-<%=@forecast.day.strftime("%A") %><br>
-<img src="http://openweathermap.org/img/w/<%= @weather.weather_icon %>.png" alt="Weather Icon" ></a><br>
-<%=@forecast.temp %>º<br>
-<%= @forecast.description%><br>
-temp_min: <%=@forecast.temp_min %><br>
-temp_max: <%=@forecast.temp_max %><br>
-humidity:  <%=@forecast.humidity %><br>
-wind speed: <%=@forecast.speed %><br>
+  <% @forecast.each do |forecast| %>
+    <div class = "forecast", id="day-<%= forecast.id %>">
+      <%=forecast.day.strftime("%A") %><br>
+      <img src="http://openweathermap.org/img/w/<%= forecast.icon %>.png" alt="Weather Icon" ></a><br>
+      <%=forecast.temp %>º<br>
+      <%= forecast.description%><br>
+      temp_min: <%=forecast.temp_min %>º<br>
+      temp_max: <%=forecast.temp_max %>º<br>
+      humidity:  <%=forecast.humidity %><br>
+      wind speed: <%=forecast.speed %><br>
+    </div>
+  <%end %>
