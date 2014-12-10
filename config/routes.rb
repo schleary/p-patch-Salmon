@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   mount Resque::Server, :at => "/resque"
 
-  resources :tools, :posts, :sessions, :users, :calendars
+  resources :tools, :posts, :sessions, :users
+
+  resource :calendar, only: [:show], controller: :calendar
 
   get   "/home/index",            to: "home#index",    as: :home_index
   root                                "home#index",    as: :root
