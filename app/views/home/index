@@ -5,12 +5,11 @@
 </div>
 
 
-temp:  <%=@forecast.temp %><br>
-temp_min:  <%=@forecast.temp_min %> <br>
-temp_max:    <%=@forecast.temp_max %>  <br>
-humidity:       <%=@forecast.humidity %>   <br>
-current_conditions:<%=@forecast.current_conditions %><br>
-description:      <%= @forecast.description%> <br>
-icon:           <a class="navbar-brand" href="#"><img src="http://openweathermap.org/img/w/<%= @weather.weather_icon %>.png" alt="Weather Icon" ></a>   <br>
-speed:      <%=@forecast.speed %>    <br>
-day:     <%=@forecast.day %>    <br>
+<%=@forecast.day.strftime("%A") %><br>
+<img src="http://openweathermap.org/img/w/<%= @weather.weather_icon %>.png" alt="Weather Icon" ></a><br>
+<%=@forecast.temp %>º<br>
+<%= @forecast.description%><br>
+temp_min: <%=@forecast.temp_min %><br>
+temp_max: <%=@forecast.temp_max %><br>
+humidity:  <%=@forecast.humidity %><br>
+wind speed: <%=@forecast.speed %><br>
