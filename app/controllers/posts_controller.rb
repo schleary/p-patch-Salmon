@@ -15,7 +15,7 @@ class PostsController < ApplicationController
       @users = User.all
       @users = @users.map {|user| user if user.email? }
       @users.each do |user|
-        Resque.enqueue(EmailNewsJob, @post.id, @post.author)
+        Resque.enqueue(EmailNewsJob, @post.id, user.id)
       end
       redirect_to posts_path
     else
