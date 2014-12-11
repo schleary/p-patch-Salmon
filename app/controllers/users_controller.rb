@@ -14,7 +14,7 @@ class UsersController < ApplicationController
         redirect_to user_path(@user.id)
       else
         # input some sort of flash notice about signing up failing?
-        redirect_to root_path
+        redirect_to @user
       end
     end
   end
