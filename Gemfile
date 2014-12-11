@@ -43,7 +43,7 @@ group :development, :test do
 end
 
 gem 'resque'
-
+gem 'heroku_resque_autoscaler'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
