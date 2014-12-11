@@ -1,4 +1,4 @@
-<%= bootstrap_form_for(@event) do |f| %>
+<%= bootstrap_form_for @event, url: {action: "update"} do |f| %>
   <%= f.date_field :day, class: "form-control" %>
   <%= f.time_field :start_time, class: "form-control"%>
   <%= f.time_field :end_time, class: "form-control"%>

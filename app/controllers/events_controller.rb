@@ -1,5 +1,9 @@
 class EventsController < ApplicationController
 
+  def index
+    update
+  end
+
   def new
     @event = Event.new()
   end
@@ -14,6 +18,10 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event = Event.find(params[:id])
+  end
+
+  def edit
     @event = Event.find(params[:id])
   end
 
