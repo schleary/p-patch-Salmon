@@ -14,7 +14,7 @@
  *= require_self
  */
 
-body{
+/*body{
   background-color: #00CC33;
 }
 
@@ -34,7 +34,7 @@ body{
   border-style: solid;
   border-width: 2px;
   border-color: black;
-}
+}*/
 
 .img{
   vertical-align: top;
