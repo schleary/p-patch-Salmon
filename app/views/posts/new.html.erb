@@ -1,7 +1,7 @@
 <%= bootstrap_form_for(@post) do |f| %>
   <%= f.text_field :title, class: "form-control", placeholder: "Title"  %>
   <%= f.text_area :content, class: "form-control", placeholder: "Content", rows: "20" %>
-  <%= f.hidden_field :user_id, :value => @current_user.id %>
+  <%= f.hidden_field :author, value: @current_user.name %>
   <%= f.text_field :img, class: "form-control", placeholder: "Image Link" %>
   <%= f.submit "Save", class: "btn btn-default"%>
 <% end %>
