@@ -1,1 +1,28 @@
-NEW
+<%= bootstrap_form_for(@event) do |f| %>
+  <%= f.date_field :day, class: "form-control", placeholder: "Day"  %>
+  <%= f.time_field :start_time, class: "form-control", placeholder: "Start Time"%>
+  <%= f.time_field :end_time, class: "form-control", placeholder: "End Time" %>
+  <%= f.text_field :name, class: "form-control", placeholder: "Event Name" %>
+  <%= f.text_field :description, class: "form-control", placeholder: "Event Description" %>
+  <%= f.submit "Save", class: "btn btn-default"%>
+<% end %>
+
+
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+</div>

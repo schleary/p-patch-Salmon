@@ -1,8 +1,8 @@
 class CalendarController < ApplicationController
 
   def show
-    @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    @events_by_date = Event.all.group_by(&:date)
+    @date = params[:date] ? Date.parse(params[:day]) : Date.today
+    @events_by_date = Event.all.group_by(&:day)
   end
   # def index
   #   # @calendars = Calendar.all
