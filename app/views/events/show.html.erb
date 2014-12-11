@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Edit
 </button>
 
 <!-- Modal -->
@@ -12,22 +12,19 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-      <div class="modal-body">
-        <form role="form">
-          <div class="form-group">
-            <label for="recipient-name" class="control-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="control-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
+        <div class="modal-body">
+          <%= bootstrap_form_for @event, url: {action: "update"} do |f| %>
+            <%= f.text_field :name, class: "form-control", placeholder: "Event Name" %>
+            <%= f.date_field :day, class: "form-control" %>
+            <%= f.text_field :description, class: "form-control", placeholder: "Event Description" %>
+            <%= f.time_field :start_time, class: "form-control"%>
+            <%= f.time_field :end_time, class: "form-control"%>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <%= f.submit "Save", class: "btn btn-default"%>
+        <% end %>
       </div>
     </div>
   </div>
@@ -47,5 +44,5 @@
   </div>
 </div>
 
-
-<%= link_to "Edit #{@event.name}", edit_event_path(@event), class:"btn btn-default" %>
+<%= link_to "Edit #{@event.name}", edit_event_path(@event), class: "btn btn-primary", data_toggle: "modal", data_target:"#myModal" %>
+<!-- data-class="btn btn-default" data-toggle= "modal" /> -->
