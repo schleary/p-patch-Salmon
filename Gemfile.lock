@@ -53,10 +53,17 @@ GEM
       dotenv (= 1.0.2)
     equalizer (0.0.9)
     erubis (2.7.0)
+    excon (0.42.1)
     execjs (2.2.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     hashie (3.3.2)
+    heroku-api (0.3.21)
+      excon (~> 0.38)
+      multi_json (~> 1.8)
+    heroku_resque_autoscaler (0.1.2)
+      heroku-api (~> 0.3.5)
+      resque (~> 1.0)
     hike (1.2.3)
     http (0.6.3)
       http_parser.rb (~> 0.6.0)
@@ -207,6 +214,7 @@ DEPENDENCIES
   bootstrap_form
   coffee-rails (~> 4.0.0)
   dotenv-rails
+  heroku_resque_autoscaler
   httparty
   jbuilder (~> 2.0)
   jquery-rails
