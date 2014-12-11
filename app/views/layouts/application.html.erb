@@ -42,6 +42,9 @@
             <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <% if @current_user %>
+            <li><%= link_to "My account", user_path(@current_user.id) %></li>
+            <% end %>
             <li><%=link_to "News", posts_path%></li>
             <li><%=link_to "Calendar", calendar_path%></li>
             <li><%=link_to "Tools", tools_path%></li>
