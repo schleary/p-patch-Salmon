@@ -12,7 +12,9 @@ RSpec.describe ToolsController, :type => :controller do
   describe "PATCH 'update'" do
     it 'redirects to the tools index' do
       tool = Tool.create(img: "blah.com", name: "hoe", img: "https://placekitten.com/g/200/300", user_id: 1)
-      patch :update,  id: tool.id, tool: {img: "blah.com", name: "rake", img: "https://placekitten.com/g/200/300", user_id: 1, availability: true }
+      # puts tool.inspect
+      # @current_user.id = 2
+      patch :update, id: tool.id, tool: {img: "blah.com", name: "rake", img: "https://placekitten.com/g/200/300", user_id: 1, availability: true }
       expect(response).to redirect_to tools_path
     end
 
