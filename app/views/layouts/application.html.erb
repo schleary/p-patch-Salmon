@@ -5,6 +5,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="javascripts/jquery-min.js"></script>
@@ -42,8 +43,9 @@
             <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <li><%=link_to "Home", root_path%></li>
             <% if @current_user %>
-            <li><%= link_to "My account", user_path(@current_user.id) %></li>
+            <li><%= link_to "My Account", user_path(@current_user.id) %></li>
             <% end %>
             <li><%=link_to "News", posts_path%></li>
             <li><%=link_to "Calendar", calendar_path%></li>
