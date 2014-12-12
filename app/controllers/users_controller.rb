@@ -22,13 +22,17 @@ class UsersController < ApplicationController
   def show
     @user = @current_user
     @user.admin == "true" ? @admin = true : @admin = false
-    @users = User.where(admin: "pending")
+    @users = User.where(admin: nil)
   end
 
   def update
     @user = @current_user
     email1 = @user.email
     @user.update(params.require(:user).permit(:name, :email))
+    if params[:user][:admin] == "1"
+      @user.admin = nil
+      @user.save
+    end
     email2 = @user.email
     unless @user.confirmed || email1 == email2
       Resque.enqueue(EmailSubscribeJob, @user.id)
@@ -56,6 +60,21 @@ class UsersController < ApplicationController
     @user.confirm
     @user.save
     redirect_to @user
+  end
+
+  def become_admin
+    @user = @current_user
+    if @user.confirmed
+      @user.adminify
+    else
+      render "admin_request"
+    end
+    @user.save
+    redirect_to @user
+  end
+
+  def admin_request
+    @user = @current_user
   end
 
   private
