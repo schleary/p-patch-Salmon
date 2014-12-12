@@ -1,7 +1,9 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Add New Event
-</button>
+<% if @current_user.admin %>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add New Event
+  </button>
+<% end %>
 <br>
 <br>
 <!-- Modal -->
@@ -50,7 +52,7 @@
     <%= calendar @date do |date| %>
       <%= date.day %>
         <div class = "calendar-block">
-          <% if @events_by_date[date] %>      
+          <% if @events_by_date[date] %>
             <div class = "calendar-text">
               <% @events_by_date[date].each do |event| %>
                 <%= link_to event.name, event %>

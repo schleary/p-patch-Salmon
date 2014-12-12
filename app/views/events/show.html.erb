@@ -39,9 +39,11 @@
   </div>
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Edit
-</button>
-<%= link_to "Delete", event_path(@event.id), method: :delete, class: "btn btn-danger" %>
-<!-- data-class="btn btn-default" data-toggle= "modal" /> -->
+<% if @current_user.admin %>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Edit
+  </button>
+  <%= link_to "Delete", event_path(@event.id), method: :delete, class: "btn btn-danger" %>
+  <!-- data-class="btn btn-default" data-toggle= "modal" /> -->
+<% end %>

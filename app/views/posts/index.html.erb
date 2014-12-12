@@ -1,6 +1,8 @@
 <div class="container">
   <br>
-  <%= link_to "Create a New post", new_post_path, class:"btn btn-primary" %>
+  <% if @current_user.admin %>
+    <%= link_to "Create a New post", new_post_path, class:"btn btn-primary" %>
+  <% end %>
   <br>
   <br>
   <% @posts.each do |post| %>
