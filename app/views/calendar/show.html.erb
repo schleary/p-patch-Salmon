@@ -55,7 +55,7 @@
           <% if @events_by_date[date] %>
             <div class = "calendar-text">
               <% @events_by_date[date].each do |event| %>
-                <%= link_to event.name, event %>
+                <%= link_to event.name[0..17], event %>
               <% end %>
             </div>
           <% end %>

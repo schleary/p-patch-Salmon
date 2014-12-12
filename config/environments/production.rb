@@ -68,6 +68,19 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
+  #
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:               'smtp.mandrillapp.com',
+    port:                  587,
+    domain:                'gmail.com',
+    user_name:             ENV["MAIL_USERNAME"],
+    password:              ENV["MAIL_PASSWORD"],
+    authentication:        "plain",
+    enables_starttls_auto: true
+  }
+
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
