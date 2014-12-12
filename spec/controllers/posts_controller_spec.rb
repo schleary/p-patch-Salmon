@@ -10,10 +10,10 @@ RSpec.describe PostsController, :type => :controller do
    end
 
    describe "PATCH 'update'" do
-     it 'is redirects to posts index' do
+     it 'is redirects to edited post' do
        post = Post.create(title: "blah", content: "blahblah", img: "https://placekitten.com/g/200/300", author: "Holly")
        patch :update, id: post.id, post: {title: "blah", content: "blahblah", img: "https://placekitten.com/g/200/300", author: "Maria"}
-       expect(response).to redirect_to posts_path
+       expect(response).to redirect_to post_path(post.id)
      end
    end
 
