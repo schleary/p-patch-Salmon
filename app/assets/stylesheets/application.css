@@ -41,3 +41,14 @@
   margin-top: 0;
   padding-top:0;
 }
+
+.calendar-block{
+  height: 50px;
+  max-width: 20px;
+  min-width: 20px;
+}
+
+.calendar-text{
+  letter-spacing: 1px;
+  font-size: 10px;
+}
