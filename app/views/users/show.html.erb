@@ -17,11 +17,14 @@
     <% else %>
       <%= f.email_field :email, placeholder: "Add your email to get updates about garden events and news!" %>
     <% end %>
-    <% if @user.admin == nil %>
-      Your admin request has been received and will be evaluated by a current admin.
+    <% if @user.admin %>
 
-    <% elsif @user.admin == false %>
+    <% elsif @user.admin == nil %>
+      Your admin request has been received and will be evaluated by a current admin.
+    <% elsif @user.admin == false && @user.confirmed %>
       <%= f.check_box :admin, label: "Request admin status" %>
+    <% else %>
+      Submit and confirm an email address in order to request admin status.
     <% end %>
   </div>
     <%= f.submit class: "btn btn-default", value: "Update Account"%>
@@ -34,12 +37,14 @@
   <hr>
   <%= link_to "Add a tool", tools_path %><br>
   <%= link_to "Write a post", new_post_path %><br>
-  <%= link_to "Schedule an event", events_path %><br>
+  <%= link_to "Schedule an event", calendar_path %><br>
   <hr>
   <% if @users.length > 0 %>
-    Admin candidates:
+    <h3>Admin candidates:</h3>
     <% @users.each do |user| %>
-      <%= user.name %> <%= link_to "Make admin", adminify_path(user.id), class: "btn btn-default" %><br>
+      <%= user.name %>
+      <%= link_to "Make admin", adminify_path(user.id), class: "btn btn-default" %>
+      <%= link_to "Deny request", deny_request_path(user.id), class: "btn btn-default" %><br>
     <% end %>
   <% end %>
 <% end %>

@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
     self.admin = true
   end
 
+  def turn_down
+    self.admin = false
+  end
+
   def confirm
     self.confirmed = true
   end

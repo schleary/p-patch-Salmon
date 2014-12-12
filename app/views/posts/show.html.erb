@@ -1,3 +1,7 @@
+<% if @current_user.admin %>
+  <%= link_to "Edit",  %>
+  <%= link_to "Delete" %>
+<% end %>
 <div class="row">
   <!-- Blog post Content Column -->
   <div class="col-lg-8">
