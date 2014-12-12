@@ -6,7 +6,7 @@ RSpec.describe User, :type => :model do
     User.new(
     email: 'a@b.com',
     name: 'Bookis',
-    password: '1234',
+    uid: 1234
     )
   }
 

@@ -11,7 +11,7 @@ RSpec.describe PostsController, :type => :controller do
 
    describe "PATCH 'update'" do
      it 'is redirects to posts index' do
-       post = post.create(title: "blah", content: "blahblah", img: "https://placekitten.com/g/200/300", author: "Holly")
+       post = Post.create(title: "blah", content: "blahblah", img: "https://placekitten.com/g/200/300", author: "Holly")
        patch :update, id: post.id, post: {title: "blah", content: "blahblah", img: "https://placekitten.com/g/200/300", author: "Maria"}
        expect(response).to redirect_to posts_path
      end
@@ -19,7 +19,7 @@ RSpec.describe PostsController, :type => :controller do
 
    describe "GET 'show'" do
      it 'is successful' do
-       post = post.create(title: "blah", content: "blahblah", img: "https://placekitten.com/g/200/300", author: "Holly")
+       post = Post.create(title: "blah", content: "blahblah", img: "https://placekitten.com/g/200/300", author: "Holly")
        get :show, id: post.id
        expect(response.status).to eq(200)
      end
