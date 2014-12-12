@@ -14,9 +14,9 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       @users = User.all
-      @users = @users.map {|user| user if user.confirmed?}
-      if @users[0]
-        @users.each do |user|
+      @users = @users.map {|user| user if user.confirmed? }
+      @users.each do |user|
+        unless !user
           Resque.enqueue(EmailNewsJob, @post.id, user.id)
         end
       end

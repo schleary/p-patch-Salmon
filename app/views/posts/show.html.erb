@@ -1,7 +1,12 @@
+
+<br>
 <% if @current_user.admin %>
-  <%= link_to "Edit", edit_post_path(@post.id), class: "btn btn-default" %>
-  <%= link_to "Delete", @post, method: :delete, class: "btn btn-default" %>
+  <%= link_to "Edit", edit_post_path(@post), class:"btn btn-default" %>
+  <%= link_to "Delete", post_path(@post), method: :delete, class:"btn btn-default" %>
 <% end %>
+
+<br>
+
 <div class="row">
   <!-- Blog post Content Column -->
   <div class="col-lg-8">
@@ -38,7 +43,5 @@
     })();
   </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-<%= link_to "Edit", edit_post_path(@post), class:"btn btn-default" %>
-<%= link_to "Delete", post_path(@post), method: :delete, class:"btn btn-default" %>
+<br>
+<br>

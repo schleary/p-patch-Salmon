@@ -11,7 +11,7 @@
       <div class="col-lg-8">
         <!-- Blog post -->
         <!-- Title -->
-        <h1><%= post.title %></h1>
+        <h1><%= link_to post.title, post %></h1>
         <!-- Author -->
         <p class="lead">
             by <%= post.author %>
@@ -50,3 +50,11 @@
   <br>
   <br>
 </div>
+<!-- <nav>
+  <ul class="pager">
+    <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+    <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+  </ul>
+</nav> -->
+<br>
+<br>
