@@ -6,7 +6,7 @@
 <% if @user.confirmed %>
   <p>
    Go ahead, click this
-   <%= link_to "button", adminify_path, class: "btn btn-default" %>,
+   <%= link_to "button", adminify_path(@user), class: "btn btn-default" %>,
    and adminify yourself!
  </p>
 <% else %>

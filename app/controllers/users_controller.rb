@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def show
     @user = @current_user
     @user.admin == "true" ? @admin = true : @admin = false
-    @users = User.where(admin: nil)
+    @users = User.where(admin: nil, confirmed: true)
   end
 
   def update
@@ -63,14 +63,21 @@ class UsersController < ApplicationController
   end
 
   def become_admin
-    @user = @current_user
+    @user = User.find(params[:id])
     if @user.confirmed
       @user.adminify
     else
       render "admin_request"
     end
     @user.save
-    redirect_to @user
+    redirect_to @current_user
+  end
+
+  def deny_request
+    @user = User.find(params[:id])
+    @user.turn_down
+    @user.save
+    redirect_to user_path(@current_user.id)
   end
 
   def admin_request
