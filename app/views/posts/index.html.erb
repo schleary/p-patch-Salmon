@@ -19,10 +19,12 @@
         <p><span class="glyphicon glyphicon-time"></span> <%= post.created_at %></p>
         <hr>
         <!-- Preview Image -->
-        <img class="img-responsive" src="<%= post.img %>">
-        <hr>
+        <% if post.img.length > 0 %>
+          <img class="img-responsive" src="<%= post.img %>">
+          <hr>
+        <% end %>
         <!-- post Content -->
-        <p class="lead"><%= post.content %></p>
+        <p class="lead"><%= post.content[0..350] %>... <%= link_to "read more", post %></p>
         <hr>
         <!-- Blog Comments -->
       </div>

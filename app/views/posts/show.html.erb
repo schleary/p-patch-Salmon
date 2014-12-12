@@ -6,15 +6,17 @@
     <h1><%= @post.title %></h1>
     <!-- Author -->
     <p class="lead">
-        by <a href="#"><%= @post.user.name %></a>
+        by <a href="#"><%= @post.author %></a>
     </p>
     <hr>
     <!-- Date/Time -->
     <p><span class="glyphicon glyphicon-time"></span> <%= @post.created_at %></p>
     <hr>
-    <!-- Preview Image -->
-    <img class="img-responsive" src="<%= @post.img %>">
-    <hr>
+    <% if @post.img.length > 0 %>
+      <!-- Preview Image -->
+      <img class="img-responsive" src="<%= @post.img %>">
+      <hr>
+    <% end %>
     <!-- post Content -->
     <p class="lead"><%= @post.content %></p>
   </div>

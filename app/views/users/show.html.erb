@@ -17,6 +17,9 @@
     <% else %>
       <%= f.email_field :email, placeholder: "Add your email to get updates about garden events and news!" %>
     <% end %>
+    <% unless @user.admin %>
+      <%= f.checkbox :admin_request, label: "Request admin status" %>
+    <% end %>
   </div>
     <%= f.submit class: "btn btn-default", value: "Update Account"%>
 <% end %>

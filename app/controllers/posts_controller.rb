@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts.to_a.reverse!
   end
 
   def new
@@ -13,7 +14,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       @users = User.all
-      @users = @users.map {|user| user if user.email? }
+      @users = @users.map {|user| user if user.confirmed? }
       if @users[0]
         @users.each do |user|
           Resque.enqueue(EmailNewsJob, @post.id, user.id)

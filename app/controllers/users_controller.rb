@@ -59,6 +59,21 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
+  def become_admin
+    @user = @current_user
+    if @user.confirmed
+      @user.adminify
+    else
+      render "admin_request"
+    end
+    @user.save
+    redirect_to @user
+  end
+
+  def admin_request
+    @user = @current_user
+  end
+
   private
 
 
