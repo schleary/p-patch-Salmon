@@ -70,14 +70,14 @@ class UsersController < ApplicationController
       render "admin_request"
     end
     @user.save
-    redirect_to @user
+    redirect_to @current_user
   end
 
   def deny_request
     @user = User.find(params[:id])
     @user.turn_down
     @user.save
-    redirect_to @current_user
+    redirect_to user_path(@current_user.id)
   end
 
   def admin_request
