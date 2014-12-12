@@ -49,13 +49,15 @@
 <!-- Display Events -->
 <div class="row">
   <div class="col-md-12">
+    <div class = "week">
     <%= calendar @date do |date| %>
+  </div>
       <%= date.day %>
         <div class = "calendar-block">
           <% if @events_by_date[date] %>
             <div class = "calendar-text">
               <% @events_by_date[date].each do |event| %>
-                <%= link_to event.name[0..17], event %>
+                <%= link_to event.name[0..20], event %>
               <% end %>
             </div>
           <% end %>
