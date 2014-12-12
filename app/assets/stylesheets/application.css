@@ -44,11 +44,24 @@
 
 .calendar-block{
   height: 50px;
-  max-width: 20px;
-  min-width: 20px;
 }
 
 .calendar-text{
   letter-spacing: 1px;
   font-size: 10px;
+}
+
+.week{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+th{
+  text-align:center;
+  width: 100px;
+}
+
+td{
+  width: 100px;
 }
