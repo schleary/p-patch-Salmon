@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     response = Weather.query
     @weather = Weather.new(response)
     if @weather.save
-      puts @weather.inspect
+      @weather
     else
       raise "NOOOOO"
     end

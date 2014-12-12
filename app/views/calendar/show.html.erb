@@ -49,13 +49,15 @@
   <div class="col-md-12">
     <%= calendar @date do |date| %>
       <%= date.day %>
-      <% if @events_by_date[date] %>
-        <ul>
-          <% @events_by_date[date].each do |event| %>
-            <li><%= link_to event.name, event %></li>
+        <div class = "calendar-block">
+          <% if @events_by_date[date] %>      
+            <div class = "calendar-text">
+              <% @events_by_date[date].each do |event| %>
+                <%= link_to event.name, event %>
+              <% end %>
+            </div>
           <% end %>
-        </ul>
-      <% end %>
+      </div>
     <% end %>
   </div>
 </div>
