@@ -8,7 +8,7 @@ class ToolsController < ApplicationController
     avail = []
     touhlz = Tool.all
     touhlz.each do |f|
-      if (f.availability == false) && (f.user_id == @current_user.id) 
+      if (f.availability == false) && (f.user_id == @current_user.id)
         @tools << f
       elsif f.availability == true
         used << f

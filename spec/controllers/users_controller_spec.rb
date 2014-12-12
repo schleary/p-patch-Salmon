@@ -9,26 +9,26 @@ RSpec.describe UsersController, :type => :controller do
     end
   end
 
-  describe "post 'account'" do
+  describe "POST 'account'" do
     it "is successful" do
       post :account, id: 1
       expect(response.status).to eq(200)
     end
   end
 
-  describe "post 'create'" do
+  describe "POST 'create'" do
     it 'is successful' do
-      expect{ post :create, user: {email: 'a@b.com', name: 'Holly', password: '12345' } }.to change(User, :count).by(1)
+      expect{ post :create, user: {email: 'a@b.com', name: 'Holly'} }.to change(User, :count).by(1)
     end
 
     it 'should redirect to the accounts page' do
-      post :create, user: {email: 'a@b.com', name: 'Holly', password: '12345'}
+      post :create, user: {email: 'a@b.com', name: 'Holly'}
       puts assigns.inspect
       expect(response).to redirect_to account_path(assigns[:user])
     end
   end
 
-  describe "post 'update'" do
+  describe "POST 'update'" do
     it 'should change the admin status of a user' do
       pending
     end
