@@ -48,11 +48,11 @@
             <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><%=link_to "Home", root_path%></li>
+            <li><span class="glyphicon glyphicon-home" aria-hidden="true"></span><%=link_to "Home", root_path%></li>
             <% if @current_user %>
             <li><%= link_to "My Account", user_path(@current_user.id) %></li>
             <% end %>
-            <li><%=link_to "News", posts_path%></li>
+            <li><span class="glyphicons glyphicons-newspaper" aria-hidden="true"></span><%=link_to "News", posts_path%></li>
             <li><%=link_to "Calendar", calendar_path%></li>
             <li><%=link_to "Tools", tools_path%></li>
             <!-- <li class="active"><a><%= link_to 'Sign In', 'auth/twitter' %> <span class="sr-only">(current)</span></a></li> -->
