@@ -31,7 +31,9 @@
       <%= f.check_box :admin, label: "Request admin status" %>
     <% else %>
 
-      Submit and confirm an email address in order to request admin status.
+      <div class="alert alert-warning" role="alert">
+        Submit and confirm an email address in order to request admin status.
+      </div>
     <% end %>
   </div>
     <%= f.submit class: "btn btn-default", value: "Update Account"%>

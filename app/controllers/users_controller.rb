@@ -13,7 +13,6 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         redirect_to user_path(@user.id)
       else
-        # input some sort of flash notice about signing up failing?
         redirect_to @user
       end
     end
