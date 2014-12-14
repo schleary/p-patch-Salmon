@@ -10,7 +10,7 @@
     <div class = "icon">
       <img src="http://openweathermap.org/img/w/<%= forecast.icon %>.png" alt="Weather Icon" ></a><br>
     </div>
-    <h3><%=forecast.temp %>º</h3><br>
+    <h3><%=forecast.temp %>º</h3>
     <%= forecast.description%><br>
     temp_min: <%=forecast.temp_min %>º<br>
     temp_max: <%=forecast.temp_max %>º<br>
