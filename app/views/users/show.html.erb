@@ -44,15 +44,17 @@
 
 <% if @user.admin %>
   <hr>
-  <button type="button" class="btn btn-default">
-    <%= link_to "Add a tool", tools_path %>
-  </button>
-  <button type="button" class="btn btn-default">
-    <%= link_to "Write a post", new_post_path %>
-  </button>
-  <button type="button" class="btn btn-default">
-    <%= link_to "Schedule an event", calendar_path %>
-  </button>
+  <div class = "buttonz">
+    <button type="button" class="btn btn-default">
+      <%= link_to "Add a Tool", tools_path %>
+    </button>
+    <button type="button" class="btn btn-default">
+      <%= link_to "Write a Post", new_post_path %>
+    </button>
+    <button type="button" class="btn btn-default">
+      <%= link_to "Schedule an Event", calendar_path %>
+    </button>
+  </div>
   <hr>
   <% if @users.length > 0 %>
     <h3>Admin candidates:</h3>
