@@ -45,14 +45,14 @@
 <% if @user.admin %>
   <hr>
   <div class = "buttonz">
-    <button type="button" class="btn btn-default">
+    <button type="button" class="btn btn-default space">
+      <%= link_to "Schedule an Event", calendar_path %>
+    </button>
+    <button type="button" class="btn btn-default space">
       <%= link_to "Add a Tool", tools_path %>
     </button>
-    <button type="button" class="btn btn-default">
+    <button type="button" class="btn btn-default space">
       <%= link_to "Write a Post", new_post_path %>
-    </button>
-    <button type="button" class="btn btn-default">
-      <%= link_to "Schedule an Event", calendar_path %>
     </button>
   </div>
   <hr>
