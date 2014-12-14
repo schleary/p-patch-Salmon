@@ -1,7 +1,9 @@
 <h2>Hello, <%= @user.name %></h2>
 
 <% if flash[:notice] %>
-  <div class="center"> <%= flash[:notice] %> </div>
+  <div class="alert alert-success" role="alert">
+    <div class="center"> <%= flash[:notice] %> </div>
+  </div>
 <% end %>
 
 <%= bootstrap_form_for(@user) do |f| %>
@@ -11,7 +13,9 @@
   <div id="edit-email">
     <% if @user.email %>
       <% unless @user.confirmed %>
+      <div class="alert alert-warning" role="alert">
         Email Unconfirmed
+      </div>
       <% end %>
       <%= f.email_field :email %>
     <% else %>
@@ -20,10 +24,13 @@
     <% if @user.admin %>
 
     <% elsif @user.admin == nil %>
-      Your admin request has been received and will be evaluated by a current admin.
+      <div class="alert alert-warning" role="alert">
+        Your admin request has been received and will be evaluated by a current admin.
+      </div>
     <% elsif @user.admin == false && @user.confirmed %>
       <%= f.check_box :admin, label: "Request admin status" %>
     <% else %>
+
       Submit and confirm an email address in order to request admin status.
     <% end %>
   </div>
