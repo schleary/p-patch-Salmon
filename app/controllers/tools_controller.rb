@@ -7,16 +7,20 @@ class ToolsController < ApplicationController
     unavailable = []
     avail = []
     touhlz = Tool.all
-    touhlz.each do |f|
-      if (f.availability == false) && (f.user_id == @current_user.id)
-        @tools << f
-      elsif f.availability == true
-        used << f
-      elsif f.availability == false && f.user_id != @current_user.id
-        avail << f
-      else
-        unavailable << f
+    if @current_user
+      touhlz.each do |f|
+        if (f.availability == false) && (f.user_id == @current_user.id)
+          @tools << f
+        elsif f.availability == true
+          used << f
+        elsif f.availability == false && f.user_id != @current_user.id
+          avail << f
+        else
+          unavailable << f
+        end
       end
+    else
+      @tools = touhlz
     end
     (@tools << used).flatten!
     (@tools << avail).flatten!
