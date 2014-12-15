@@ -84,3 +84,8 @@ td{
 .media{
   display: inline;
 }
+
+.col-xs-1{
+  padding: 0;
+  margin: 0;
+}
