@@ -30,23 +30,20 @@
             <span class="icon-bar"></span>
           </button>
           <div class = "weather">
-
-
-            <a class="navbar-brand" href="#"><img src="http://openweathermap.org/img/w/<%= @weather.weather_icon %>.png" alt="Weather Icon" ></a>
-
-            <h4><%= @weather.temp.to_i%>º</h4>
+            <img src="http://openweathermap.org/img/w/<%= @weather.weather_icon %>.png" alt="Weather Icon" >
+            <%= @weather.temp.to_i%>º
           </div>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
+          <!-- <ul class="nav navbar-nav">
             <% if @current_user %>
               <li><%= link_to "Sign Out", session_path(session[:user_id]), method: :delete  %> <span class="sr-only">(current)</span></li>
             <% else %>
               <li><%= link_to 'Sign In With Twitter', 'auth/twitter' %> <span class="sr-only">(current)</span></li>
             <% end %>
-          </ul>
+          </ul> -->
           <ul class="nav navbar-nav navbar-right">
             <li>
               <!-- <span class="glyphicon glyphicon-home" aria-hidden="true"></span> -->
@@ -66,6 +63,13 @@
               <!-- <span class="glyphicon glyphicon-spade" aria-hidden="true"></span> -->
               <%=link_to "Tools", tools_path%>
             </li>
+            <ul class="nav navbar-nav">
+              <% if @current_user %>
+                <li><%= link_to "Sign Out", session_path(session[:user_id]), method: :delete  %> <span class="sr-only">(current)</span></li>
+              <% else %>
+                <li><%= link_to 'Sign In With Twitter', 'auth/twitter' %> <span class="sr-only">(current)</span></li>
+              <% end %>
+            </ul>
             <!-- <li class="active"><a><%= link_to 'Sign In', 'auth/twitter' %> <span class="sr-only">(current)</span></a></li> -->
           </ul>
         </div><!-- /.navbar-collapse -->

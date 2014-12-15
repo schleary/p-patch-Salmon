@@ -3,24 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .media-image{
-  display: inline-block;
-  margin: 15px;
+  display: inline;
+  // margin: 15px;
+  // text-align: center;
 }
 
 .media-body{
-  display: inline-block;
-  margin-left: 10px;
+  display: inline;
+  // margin-left: 10px;
+  // text-align: center;
 }
 
-.media{
-  margin: 50px;
+// .media-button{
+//   display: inline;
+//   margin: 15px;
+//   text-align: center;
+// }
+//
+.margin{
+  // display: block;
 }
-
-.media-button{
-  display: inline-block;
-  margin: 15px;
-}
-// 
 // .grey{
 //   background-color: gray;
 // }

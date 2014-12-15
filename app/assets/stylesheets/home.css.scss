@@ -34,3 +34,15 @@
   padding-left:10px;
   padding-right: 10px;
 }
+
+@media (max-width: 1000px) {
+  .desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .phone {
+    display: none;
+  }
+}

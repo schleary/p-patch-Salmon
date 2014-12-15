@@ -2,11 +2,11 @@
   <h1>Garden Row</h1>
   <p>A fun place to work and play</p>
 </div>
-
-<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="desktop">
   <% @forecast.each do |forecast| %>
     <div class = "forecast col-sm-2 col-xs-2", id="day-<%= forecast.id %>">
-      <h3><%=forecast.day.strftime("%A") %></h3><br>
+      <h3><%=forecast.day.strftime("%A") %></h3>
+      <hr>
       <div class = "icon">
         <img src="http://openweathermap.org/img/w/<%= forecast.icon %>.png" alt="Weather Icon" ></a><br>
       </div>
@@ -16,6 +16,22 @@
       Low: <%=forecast.temp_max.to_i %>º<br>
       Humidity:  <%=forecast.humidity.to_i %>%<br>
       Wind Speed: <%=forecast.speed %> mph<br>
+    </div>
+  <% end %>
+</div>
+
+<div class="phone">
+  <% @forecast.each do |forecast| %>
+    <div class = "forecast col-sm-2 col-xs-2", id="day-<%= forecast.id %>">
+      <h3><%=forecast.day.strftime("%A")[0,1] %></h3>
+      <hr>
+      <div class = "icon">
+        <img src="http://openweathermap.org/img/w/<%= forecast.icon %>.png" alt="Weather Icon" ></a><br>
+      </div>
+      <h3><%=forecast.temp.to_i %>º</h3>
+      <%= forecast.description.titleize%><br>
+      High: <%=forecast.temp_min.to_i %>º<br>
+      Low: <%=forecast.temp_max.to_i %>º<br>
     </div>
   <% end %>
 </div>

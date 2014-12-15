@@ -36,6 +36,10 @@
   border-color: black;
 }*/
 
+.navbar-nav{
+  vertical-align: center;
+}
+
 .img{
   vertical-align: top;
   margin-top: 0;
@@ -71,21 +75,19 @@ td{
   padding-left: 20%;
   padding-top: 0;
   padding-right: 20%;
+  display: inline
 }
 
 .buttonz{
   text-align: center;
 }
 
-.tools{
-  display: inline-block;
-}
-
-.media{
-  display: inline;
-}
-
 .col-xs-1{
   padding: 0;
   margin: 0;
+}
+
+.degrees{
+  text-align: center;
+  margin-left: 50%;
 }
