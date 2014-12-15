@@ -46,13 +46,13 @@
 
 <div class="media">
   <% @tools.each do |tool| %>
-    <div class ="media-image">
+    <div class ="tools media-image">
       <img src="<%= tool.img %>" height="125px">
     </div>
-    <div class="media-body">
+    <div class="tools media-body">
       <h4 class="media-heading"><%= tool.name %></h4>
     </div>
-    <div class="media-button">
+    <div class="tools media-button">
       <%= bootstrap_form_for tool, url: tool_path(tool.id) do |f| %>
         <%= f.hidden_field :user_id, :value => @current_user.id %>
         <% if (tool.availability == false) && (tool.user_id == @current_user.id) %>

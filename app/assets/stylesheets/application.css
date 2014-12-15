@@ -81,3 +81,11 @@ td{
   margin-left:15%;
   margin-right: 15%;
 }
+
+.tools{
+  display: inline-block;
+}
+
+.media{
+  display: inline;
+}
