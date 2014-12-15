@@ -3,18 +3,19 @@
   <p>A fun place to work and play</p>
 </div>
 
-
-<% @forecast.each do |forecast| %>
-  <div class = "forecast", id="day-<%= forecast.id %>">
-    <h3><%=forecast.day.strftime("%A") %></h3><br>
-    <div class = "icon">
-      <img src="http://openweathermap.org/img/w/<%= forecast.icon %>.png" alt="Weather Icon" ></a><br>
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <% @forecast.each do |forecast| %>
+    <div class = "forecast col-sm-2 col-xs-2", id="day-<%= forecast.id %>">
+      <h3><%=forecast.day.strftime("%A") %></h3><br>
+      <div class = "icon">
+        <img src="http://openweathermap.org/img/w/<%= forecast.icon %>.png" alt="Weather Icon" ></a><br>
+      </div>
+      <h3><%=forecast.temp.to_i %>º</h3>
+      <%= forecast.description.titleize%><br>
+      High: <%=forecast.temp_min.to_i %>º<br>
+      Low: <%=forecast.temp_max.to_i %>º<br>
+      Humidity:  <%=forecast.humidity.to_i %>%<br>
+      Wind Speed: <%=forecast.speed %> mph<br>
     </div>
-    <h3><%=forecast.temp %>º</h3>
-    <%= forecast.description%><br>
-    temp_min: <%=forecast.temp_min %>º<br>
-    temp_max: <%=forecast.temp_max %>º<br>
-    humidity:  <%=forecast.humidity %><br>
-    wind speed: <%=forecast.speed %><br>
-  </div>
-<% end %>
+  <% end %>
+</div>
